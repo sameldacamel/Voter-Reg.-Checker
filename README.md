@@ -24,3 +24,6 @@ Takes the name and enters it into the URL template. Goes and downloads the HTML 
 -Requires no key imput.
 -Requires parse as well as a cashe.
 -Find a way to make sure it is the right person?
+
+Way to download HTML code: http://curl.haxx.se/libcurl/c/simple.html
+What does it return? Where does it return it to? Is it in the format of an HTML file or is it just a text doc?
