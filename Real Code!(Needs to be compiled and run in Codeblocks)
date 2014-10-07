@@ -1,0 +1,65 @@
+#include <iostream>
+#include <fstream>  //I don't think I need this right now
+#include <cstdlib>  //Lets you read the spredsheet!
+
+using namespace std;
+
+int main() {
+
+    char spredsheet[100];   //Throw this into CodeBlocks but I think I'm not using this...
+    char filename[25];      //This may or may not change depending on if the getline line is added
+    string p1URL;
+    string p2URL;
+    string p3URL;
+    string goURL;       //The last URL that is to be imput into the string of code that downloads the HTML code
+    string LASTNAME;
+    string FIRSTNAME;
+    int i = 0;      //Really i would equal the number of words in the doc. Do I need the FIN! thing if I can do this?
+
+    filename = "Sheet1";        //The spread sheet MUST be the same string for it to work!
+
+    //cin.getline(filename,25); This line could be added but the above line would have to be removed!
+
+    ifstream fil3;      //The file call. Must be called before each use of the file!
+    fil3.open(filename);
+    cout << "Opened " << filename << endl;
+
+    while(i > 1){           //i < 100 will have to change to the number of LASTNAMES in the spredsheet!
+    
+        //In here is where the computer will go through the file and find the FIRSTNAME
+        //and the LASTNAME.
+        p1URL = "https://www.ncsbe.gov/webapps/voter_search/default.aspx?lname=" + LASTNAME;
+        p2URL = "&lname_snd=False&fname=" + FIRSTNAME;
+        p3URL = "&fname_snd=False&mname=&county=0&status=%27A%27,%27I%27&bdate="
+        goURL = p1URL + p2URL + p3URL;      //The HTML must be in this while loop but it also must be below this line!
+        
+        if (LASTNAME == "FIN!") {           //This means that you have to format the file with FIN! at the end!
+            cout << "The check is finished! Your list has been edited accordingly..." << endl;
+            return 0;       //This should finish the program and kill it all!
+        }   //If
+    }   //While       
+
+}//int main
+
+
+
+
+
+
+
+/*
+int main() {
+   
+   cout << "Hello World" << endl; 
+   
+   string list;
+   
+   cout << "Enter your list: ";
+   cout << endl;
+   getline (cin, list);
+   std::cin.get();   
+   cout << "The list you entered is " << list << endl;
+   
+   return 0;
+}
+*/
